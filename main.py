@@ -593,6 +593,19 @@ class FloatingWidget(QWidget):  # 浮窗
     def focusOutEvent(self, event):
         self.focusing = False
 
+    def enterEvent(self, event):
+        self.set_opacity(0.1)
+
+    def leaveEvent(self, event):
+        self.set_opacity(1.0)
+
+    def set_opacity(self, opacity):
+        self.opacity_animation.stop()
+        self.opacity_animation.setDuration(300)
+        self.opacity_animation.setStartValue(self.windowOpacity())
+        self.opacity_animation.setEndValue(opacity)
+        self.opacity_animation.start()
+
 
 class DesktopWidget(QWidget):  # 主要小组件
     def __init__(self, path='widget-time.ui', pos=(100, 50), enable_tray=False):
@@ -978,6 +991,19 @@ class DesktopWidget(QWidget):  # 主要小组件
             pass
         self.deleteLater()  # 销毁内存
         event.accept()
+
+    def enterEvent(self, event):
+        self.set_opacity(0.1)
+
+    def leaveEvent(self, event):
+        self.set_opacity(1.0)
+
+    def set_opacity(self, opacity):
+        self.opacity_animation.stop()
+        self.opacity_animation.setDuration(300)
+        self.opacity_animation.setStartValue(self.windowOpacity())
+        self.opacity_animation.setEndValue(opacity)
+        self.opacity_animation.start()
 
 
 def check_windows_maximize():  # 检查窗口是否最大化
