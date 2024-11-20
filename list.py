@@ -83,7 +83,7 @@ widget_width = {  # 默认宽度
 widget_conf = {
     '当前日期': 'widget-time.ui',
     '活动倒计时': 'widget-countdown.ui',
-    '当前活动': 'widget-current-activity.ui',
+    '当前课程': 'widget-current-activity.ui',
     '更多活动': 'widget-next-activity.ui',
     '自定义倒计时': 'widget-countdown-custom.ui',
     '天气': 'widget-weather.ui'
@@ -92,7 +92,7 @@ widget_conf = {
 widget_name = {
     'widget-time.ui': '当前日期',
     'widget-countdown.ui': '活动倒计时',
-    'widget-current-activity.ui': '当前活动',
+    'widget-current-activity.ui': '当前课程',
     'widget-next-activity.ui': '更多活动',
     'widget-countdown-custom.ui': '自定义倒计时',
     'widget-weather.ui': '天气'

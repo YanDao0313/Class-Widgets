@@ -115,7 +115,7 @@ def get_part():
     return parts_start_time[0] + dt.timedelta(seconds=time_offset), 0
 
 
-# 获取当前活动
+# 获取当前课程
 def get_current_lessons():  # 获取当前课程
     global current_lessons
     timeline = get_timeline_data()
@@ -189,7 +189,7 @@ def get_countdown(toast=False):  # 重构好累aaaa
                     if c_time >= current_dt:
                         # 根据所在时间段使用不同标语
                         if item_name.startswith('a'):
-                            return_text.append('当前活动结束还有')
+                            return_text.append('当前课程结束还有')
                         else:
                             return_text.append('课间时长还有')
                         # 返回倒计时、进度条
@@ -264,7 +264,7 @@ def get_next_lessons_text():
     return cache_text
 
 
-# 获取当前活动
+# 获取当前课程
 def get_current_lesson_name():
     global current_lesson_name, current_state
     current_dt = dt.datetime.combine(today, dt.datetime.strptime(current_time, '%H:%M:%S').time())  # 当前时间
@@ -652,7 +652,7 @@ class DesktopWidget(QWidget):  # 主要小组件
             self.activity_countdown = self.findChild(QLabel, 'activity_countdown')
             self.ac_title = self.findChild(QLabel, 'activity_countdown_title')
 
-        if path == 'widget-current-activity.ui':  # 当前活动
+        if path == 'widget-current-activity.ui':  # 当前课程
             self.current_lesson_name_text = self.findChild(QPushButton, 'subject')
             self.blur_effect_label = self.findChild(QLabel, 'blurEffect')
             # 模糊效果
@@ -813,7 +813,7 @@ class DesktopWidget(QWidget):  # 主要小组件
         if not self.animation:
             self.setWindowOpacity(int(conf.read_conf('General', 'opacity')) / 100)  # 设置窗口透明度
 
-        if path != 'widget-current-activity.ui':  # 不是当前活动组件
+        if path != 'widget-current-activity.ui':  # 不是当前课程组件
             cd_list = get_countdown()
         else:
             cd_list = get_countdown(toast=True)
@@ -823,7 +823,7 @@ class DesktopWidget(QWidget):  # 主要小组件
             self.date_text.setText(f'{today.year} 年 {today.month} 月')
             self.day_text.setText(f'{today.day} 日 {list.week[today.weekday()]}')
 
-        if hasattr(self, 'current_lesson_name_text'):  # 当前活动
+        if hasattr(self, 'current_lesson_name_text'):  # 当前课程
             self.current_lesson_name_text.setText(f'  {current_lesson_name}')
             render = QSvgRenderer(list.get_subject_icon(current_lesson_name))
             pixmap = QPixmap(render.defaultSize())
