@@ -189,7 +189,7 @@ def get_countdown(toast=False):  # 重构好累aaaa
                     if c_time >= current_dt:
                         # 根据所在时间段使用不同标语
                         if item_name.startswith('a'):
-                            return_text.append('当前课程结束还有')
+                            return_text.append('当前课程结束仅剩')
                         else:
                             return_text.append('课间时长还有')
                         # 返回倒计时、进度条
@@ -206,7 +206,7 @@ def get_countdown(toast=False):  # 重构好累aaaa
             if f'a{part}1' in timeline_data:
                 time_diff = c_time - current_dt
                 minute, sec = divmod(time_diff.seconds, 60)
-                return_text = ['距离上课还有', f'{minute:02d}:{sec:02d}', 100]
+                return_text = ['距离上课仅剩', f'{minute:02d}:{sec:02d}', 100]
             else:
                 return_text = ['目前课程已结束', f'00:00', 100]
         return return_text
@@ -857,7 +857,7 @@ class DesktopWidget(QWidget):  # 主要小组件
                 self.countdown_progress_bar.setValue(cd_list[2])
 
         if hasattr(self, 'countdown_custom_title'):  # 自定义倒计时
-            self.custom_title.setText(f'距离 {conf.read_conf("Date", "cd_text_custom")} 还有')
+            self.custom_title.setText(f'距离 {conf.read_conf("Date", "cd_text_custom")} 仅剩')
             self.custom_countdown.setText(conf.get_custom_countdown())
 
     def get_weather_data(self):

@@ -693,7 +693,7 @@
               <item>
                <widget class="CaptionLabel" name="CaptionLabel">
                 <property name="text">
-                 <string>将会显示（距离 &quot;你所输入的文本&quot; 还有 ）</string>
+                 <string>将会显示（距离 &quot;你所输入的文本&quot; 仅剩 ）</string>
                 </property>
                 <property name="lightColor" stdset="0">
                  <color alpha="150">

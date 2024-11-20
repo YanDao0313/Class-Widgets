@@ -47,7 +47,7 @@
 font-weight: bold;</string>
    </property>
    <property name="text">
-    <string>距离 中考 还有</string>
+    <string>距离 中考 仅剩</string>
    </property>
    <property name="textFormat">
     <enum>Qt::PlainText</enum>
