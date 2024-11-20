@@ -49,6 +49,8 @@ city = 101010100  # 默认城市
 time_offset = 0  # 时差偏移
 first_start = True
 
+widgets = []  # List to store all widget instances
+
 if conf.read_conf('Other', 'do_not_log') != '1':
     logger.add("log/ClassWidgets_main_{time}.log", rotation="1 MB", encoding="utf-8", retention="1 minute")
     logger.info('未禁用日志输出')
@@ -594,10 +596,14 @@ class FloatingWidget(QWidget):  # 浮窗
         self.focusing = False
 
     def enterEvent(self, event):
-        self.set_opacity(0.1)
+        global widgets
+        for widget in widgets:
+            widget.set_opacity(0.1)
 
     def leaveEvent(self, event):
-        self.set_opacity(1.0)
+        global widgets
+        for widget in widgets:
+            widget.set_opacity(1.0)
 
     def set_opacity(self, opacity):
         self.opacity_animation.stop()
@@ -610,6 +616,9 @@ class FloatingWidget(QWidget):  # 浮窗
 class DesktopWidget(QWidget):  # 主要小组件
     def __init__(self, path='widget-time.ui', pos=(100, 50), enable_tray=False):
         super().__init__()
+        global widgets
+        widgets.append(self)  # Add each widget instance to the list
+        self.opacity_animation = QPropertyAnimation(self, b'windowOpacity')  # Ensure opacity animation is initialized
         # 设置窗口位置
         if first_start:
             self.animate_window(pos)
@@ -683,6 +692,7 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.update_data('')
         self.timer = QTimer(self)
         self.update_time()
+        self.opacity_animation = QPropertyAnimation(self, b'windowOpacity')  # Add this line
 
     def update_time(self):
         if self.path == 'widget-current-activity.ui':
@@ -993,10 +1003,14 @@ class DesktopWidget(QWidget):  # 主要小组件
         event.accept()
 
     def enterEvent(self, event):
-        self.set_opacity(0.1)
+        global widgets
+        for widget in widgets:
+            widget.set_opacity(0.1)
 
     def leaveEvent(self, event):
-        self.set_opacity(1.0)
+        global widgets
+        for widget in widgets:
+            widget.set_opacity(1.0)
 
     def set_opacity(self, opacity):
         self.opacity_animation.stop()
