@@ -48,7 +48,7 @@ class tip_toast(QWidget):
 
         if state == 1:
             logger.info('上课铃声显示')
-            title_label.setText('活动开始')  # 修正文本，以适应不同场景
+            title_label.setText('课程开始')  # 修正文本，以适应不同场景
             subtitle_label.setText('当前课程')
             lesson.setText(lesson_name)  # 课程名
             playsound(attend_class)
