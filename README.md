@@ -5,7 +5,7 @@
   Class Widgets for MYHS & MZES
 </h1>
 <p align="center">
- 全新桌面课表 - 为绵中与绵中实验定制<br />尚处定制开发阶段
+  全新桌面课表 - 为绵阳中学与绵中实验定制<br />尚处定制开发阶段
 </p>
 
 <div align="center">
@@ -21,6 +21,7 @@
 
 
 ## 特性
+
 - 将今日的课程安排以**小组件**的样式为你呈现；
 - 具有 [上下课提醒](https://www.yuque.com/rinlit/class-widgets_help/fv2ou1i1ngap0hrl) 和预备铃；
 - 拥有主题系统支持你高度自定义。
@@ -47,16 +48,12 @@
 ![scrshot_0](img/screenshot_1.png)
 
 ## 安装&使用
+
 > [!TIP]
 > 可在 [Class Widgets 官方文档](https://www.yuque.com/rinlit/class-widgets_help/gs3gsbms1iivgibm) 查看教程。
 
-> [!IMPORTANT]
-> 若要体验此页面的特性，请前往[此处](https://github.com/RinLit-233-shiroko/Class-Widgets/releases/tag/v1.1.7-b3)预发行版的页面下载。
-
-下载 ![当前版本](https://img.shields.io/github/v/release/RinLit-233-shiroko/Class-Widgets?style=flat&color=purple&label=当前版本) 中最新版的压缩文件，解压到合适位置后，打开 `ClassWidgets.exe` 即可。
-可通过托盘菜单进入设置、或退出此程序。
-
 ## 协议
+
 此项目 (Class Widgets) 基于 GPL-3.0 许可证授权发布，详情请参阅 [LICENSE](./LICENSE) 文件。
 
 Copyright © 2024 RinLit.
@@ -77,3 +74,8 @@ Copyright © 2024 RinLit.
 - [SF Symbols](https://developer.apple.com/sf-symbols/) （部分图标已做修改）
 - [和风天气图标](https://icons.qweather.com/)（部分图标已做修改）
 - [HarmonyOS Sans](https://developer.huawei.com/consumer/cn/design/resource/)
+
+---
+
+Thanks! [RinLit](https://github.com/RinLit-233-shiroko)  
+<small>Processed by [Kris Yan](https://krisyan.dev/) on behalf of MSOI</small>
