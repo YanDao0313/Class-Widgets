@@ -22,6 +22,7 @@
 
 ## 特性
 
+- *可加载Python语言的**插件**系统和插件广场（Plugin Plaza）——Coming Soon*
 - 将今日的课程安排以**小组件**的样式为你呈现；
 - 具有 [上下课提醒](https://www.yuque.com/rinlit/class-widgets_help/fv2ou1i1ngap0hrl) 和预备铃；
 - 拥有主题系统支持你高度自定义。
