@@ -835,6 +835,10 @@ class DesktopWidget(QWidget):  # 主要小组件
         global widgets
         widgets.append(self)  # Add each widget instance to the list
         self.opacity_animation = QPropertyAnimation(self, b'windowOpacity')  # Ensure opacity animation is initialized
+        
+        self.w = self.width()  # 添加宽度属性
+        self.h = self.height()
+
         # 设置窗口位置
         if first_start:
             self.animate_window(pos)
@@ -918,6 +922,8 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.timer = QTimer(self)
         self.update_time()
         self.opacity_animation = QPropertyAnimation(self, b'windowOpacity')  # Add this line
+
+        self.animate_window(pos)
 
     def update_widget_for_plugin(self, context=['title', 'desc']):
         title = self.findChild(QLabel, 'title')
@@ -1198,6 +1204,8 @@ class DesktopWidget(QWidget):  # 主要小组件
             mgr.show_windows()
 
     def animate_window(self, target_pos):  # 窗口动画！
+        self.w = self.width()
+        self.h = self.height()
         # 创建位置动画
         self.animation = QPropertyAnimation(self, b"geometry")
         self.animation.setDuration(525)  # 持续时间

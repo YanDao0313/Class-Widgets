@@ -1,5 +1,3 @@
 {
-    "enabled_plugins": [
-        "test"
-    ]
+    "enabled_plugins": []
 }
