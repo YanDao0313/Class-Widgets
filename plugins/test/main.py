@@ -56,8 +56,11 @@ class Plugin:
                 
             contentLayout.setSpacing(1)
 
-            # 创建并添加图片
-            self.testimg = ImageLabel(f'{self.PATH}/img/favicon.png')
+        if self.test_widget:  # 判断小组件是否存在
+            contentLayout = self.test_widget.findChild(QHBoxLayout, 'contentLayout')  # 标题布局
+            contentLayout.setSpacing(1)  # 设置间距
+
+            self.testimg = ImageLabel(f'{self.PATH}/img/favicon.png')  # 自定义图片
             self.testimg.setFixedSize(36, 30)
             contentLayout.addWidget(self.testimg)
 
